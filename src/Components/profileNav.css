@@ -1,0 +1,23 @@
+.profile-nav {
+    position: relative;
+  }
+  
+  .selector {
+    position: absolute;
+    width: 30px; /* Adjust based on icon size */
+    height: 30px; /* Adjust based on icon size */
+    border-radius: 50%;
+    background-color: orangered;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav-link.active + .selector {
+    transform: translateX(calc(50% - 15px)); /* Half of icon width */
+  }
+  
