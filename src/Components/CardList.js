@@ -1,8 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import Badge from '@material-ui/core/Badge';
-import Avatar from '@material-ui/core/Avatar';
-import Chip from '@material-ui/core/Chip';
+import Avatar from '@mui/material/Avatar';
+import Chip from '@mui/material/Chip';
 
 const data = [
   {
@@ -28,10 +27,10 @@ const data = [
 ];
 
 const CustomCard = ({ imageUrl, heading, description, badges, avatarUrl, name, filterWords }) => (
-  <Card style={{ width: '100%', height: '25%' }}>
+  <Card style={{ width: '100%', height: '25%', marginBottom: '10px' }}>
     <div style={{ display: 'flex', height: '100%' }}>
-      <div style={{ flex: '1', padding: '0.5em' }}>
-        <img src={imageUrl} alt="Placeholder" style={{ width: '100%', height: '100%', borderRadius: '50%' }} />
+      <div style={{ display: 'flex', flexDirection: 'column', flex: '1', padding: '0.5em', alignItems: 'center', justifyContent: 'center' }} >
+        <img src={imageUrl} alt="Placeholder" style={{ width: '150px', height: '150px', borderRadius: '50%', alignItems: 'center', justifyContent: 'center' }} />
       </div>
       <div style={{ flex: '3', padding: '0.5em' }}>
         <Card.Body>
@@ -42,13 +41,12 @@ const CustomCard = ({ imageUrl, heading, description, badges, avatarUrl, name, f
           </div>
           <Card.Title>{heading}</Card.Title>
           <Card.Text>{description}</Card.Text>
-          <div>
+          <div style={{ marginBottom: '10px' }}>
             {badges.map((badge, index) => (
-              <Badge key={index} badgeContent={badge} color="primary">
-                <span style={{ marginRight: '5px' }}>Badge</span>
-              </Badge>
+              <Chip key={index} label={badge} color="primary" clickable style={{ marginRight: '5px' }} />
             ))}
           </div>
+
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <Avatar alt="Avatar" src={avatarUrl} style={{ marginRight: '10px' }} />
             <span>{name}</span>
@@ -60,7 +58,7 @@ const CustomCard = ({ imageUrl, heading, description, badges, avatarUrl, name, f
 );
 
 const CardList = () => (
-  <div>
+  <div style={{ maxHeight: '400px', overflowY: 'auto', scrollbarWidth: 'thin', scrollbarColor: '#888888 #f0f0f0'  }}>
     {data.map((item) => (
       <CustomCard
         key={item.id}

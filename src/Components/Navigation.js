@@ -21,10 +21,10 @@ export default function Navigation() {
           <Nav className='mb-2 mb-lg-0 ms-auto'>
             <Nav.Link href='/home' active>Home</Nav.Link>
             <Nav.Link href='#'>Link</Nav.Link>
-            <NavDropdown title='Dropdown' id='basic-nav-dropdown'>
-              <NavDropdown.Item>Action</NavDropdown.Item>
-              <NavDropdown.Item>Another action</NavDropdown.Item>
-              <NavDropdown.Item>Something else here</NavDropdown.Item>
+            <NavDropdown title='Forums & Community' id='basic-nav-dropdown'>
+              <Nav.Link href="/forum">Global Forums</Nav.Link>
+              <Nav.Link href="/create-forum">Create a Forum</Nav.Link>
+              <Nav.Link href="#something-else">Something else here</Nav.Link>
             </NavDropdown>
             <Nav.Link href='#'>Link</Nav.Link>
             <Nav.Link href='#'>Link</Nav.Link>

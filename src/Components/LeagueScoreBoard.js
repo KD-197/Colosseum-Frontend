@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Table } from 'react-bootstrap';
-import { Paper, TableContainer, TableHead, TableBody, TableRow, TableCell } from '@material-ui/core';
+import { Table } from 'react-bootstrap';
+import { Paper, TableContainer, TableHead, TableBody, TableRow, TableCell } from '@mui/material';
 
 const LeagueScoreboard = ({ leagueName }) => {
 
@@ -25,8 +25,8 @@ const LeagueScoreboard = ({ leagueName }) => {
   }, []);
 
   return (
-    <Container>
-      <h2>{leagueName} Scoreboard</h2>
+    <div style={{ maxHeight: '400px', overflow: 'auto' }}>
+      <h5>{leagueName} Scoreboard</h5>
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
@@ -51,7 +51,7 @@ const LeagueScoreboard = ({ leagueName }) => {
           </TableBody>
         </Table>
       </TableContainer>
-    </Container>
+    </div>
   );
 };
 
